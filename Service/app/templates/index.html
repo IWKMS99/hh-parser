@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="http://127.0.0.1:5000/">Главная</a>
+    <a href="/">Работа с данными</a>
+</div>
+
+<div class="container">
+    <h2>Фильтрация и сортировка вакансий</h2>
+
+    <form id="filterForm">
+        <div class="filter-group">
+            <label for="jobTitle">Название вакансии:</label>
+            <select id="jobTitle" name="jobTitle">
+                <option value="">Все</option>
+                <!-- Опции будут добавлены динамически через JavaScript -->
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="employer">Работодатель:</label>
+            <select id="employer" name="employer">
+                <option value="">Все</option>
+                <!-- Опции будут добавлены динамически через JavaScript -->
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="city">Город:</label>
+            <select id="city" name="city">
+                <option value="">Все</option>
+                <!-- Опции будут добавлены динамически через JavaScript -->
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="employmentType">Тип занятости:</label>
+            <select id="employmentType" name="employmentType">
+                <option value="">Все</option>
+                <!-- Опции будут добавлены динамически через JavaScript -->
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="sort">Сортировка по:</label>
+            <select id="sort" name="sort">
+                <option value="city">Город</option>
+                <option value="title">Название вакансии</option>
+                <option value="employer">Работодатель</option>
+            </select>
+        </div>
+
+        <button type="submit">Применить фильтры</button>
+    </form>
+
+    <table id="filteredVacancies">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Работодатель</th>
+                <th>Местоположение</th>
+                <th>Тип занятости</th>
+                <th>Зарплата</th>
+                <th>Дата публикации</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Здесь будут добавляться строки с отфильтрованными данными -->
+        </tbody>
+    </table>
+</div>
+
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

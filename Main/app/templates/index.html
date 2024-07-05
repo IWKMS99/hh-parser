@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">Главная</a>
+    <a href="http://127.0.0.1:8000/">Работа с данными</a>
+</div>
+
+<div class="container">
+    <h2>Таблица вакансий</h2>
+    <progress id="progressBar" value="0" max="100"></progress>
+    <p id="statusText"></p> 
+    <table id="vacanciesTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Работодатель</th>
+                <th>Местоположение</th>
+                <th>Тип занятости</th>
+                <th>Зарплата</th>
+                <th>Дата публикации</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <button class="btn" onclick="fetchVacancies()">Обновить данные</button>
+</div>
+
+</body>
+</html>
